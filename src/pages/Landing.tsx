@@ -16,13 +16,13 @@ import {
   Check,
   Scan,
   Utensils,
-  Star,
   Shield,
   Clock,
   Zap,
   TrendingUp,
   Layers,
   Calendar,
+  CalendarDays,
   ChevronRight,
   Printer,
   ShoppingBag,
@@ -32,6 +32,7 @@ import {
   Plus,
   CreditCard,
   TabletSmartphone,
+  MessageSquare,
 } from "lucide-react";
 import { useNavigate } from "react-router";
 
@@ -115,8 +116,8 @@ function Navbar() {
 
   const links = [
     { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
     { label: "How It Works", href: "#how-it-works" },
+    { label: "Pricing", href: "#pricing" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -143,7 +144,7 @@ function Navbar() {
               <Utensils className="w-4 h-4 text-[#0D0F0E]" />
             </div>
             <span className="font-serif text-xl font-semibold tracking-tight text-[#F5F5F0]">
-              ReSTRA
+              ReSTRA System
             </span>
           </a>
 
@@ -163,10 +164,10 @@ function Navbar() {
           {/* CTA */}
           <div className="flex items-center gap-4">
             <a
-              href="/auth"
+              href="#contact"
               className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium bg-[#F5C542] text-[#0D0F0E] rounded-lg hover:bg-[#F5C542]/90 transition-all duration-200 hover:shadow-lg hover:shadow-[#F5C542]/10"
             >
-              Get Started
+              Book a Demo
               <ArrowRight className="w-4 h-4" />
             </a>
             <button
@@ -202,10 +203,10 @@ function Navbar() {
               ))}
               <div className="pt-3">
                 <a
-                  href="/auth"
+                  href="#contact"
                   className="flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium bg-[#F5C542] text-[#0D0F0E] rounded-lg hover:bg-[#F5C542]/90 transition-all"
                 >
-                  Get Started
+                  Book a Demo
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
@@ -243,7 +244,7 @@ function HeroSection() {
             <motion.div variants={fadeUp} custom={0}>
               <span className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-[#F5C542] bg-[#F5C542]/10 border border-[#F5C542]/20 rounded-full mb-6">
                 <Zap className="w-3 h-3" />
-                Restaurant management, simplified
+                Restaurant management, unified
               </span>
             </motion.div>
 
@@ -252,8 +253,8 @@ function HeroSection() {
               custom={1}
               className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] tracking-tight text-[#F5F5F0]"
             >
-              Run the restaurant.{" "}
-              <span className="text-[#F5C542]">Not the paperwork.</span>
+              Run the restaurant,{'
+'}              <span className="text-[#F5C542]">not the paperwork.</span>
             </motion.h1>
 
             <motion.p
@@ -262,8 +263,8 @@ function HeroSection() {
               className="mt-6 text-lg text-[#F5F5F0]/60 leading-relaxed max-w-lg"
             >
               POS, QR ordering, billing, inventory, order tracking, and staff
-              management — all in one system built for how restaurants actually
-              work.
+              management — all in one system built for the way restaurants actually
+              operate.
             </motion.p>
 
             <motion.div
@@ -272,17 +273,17 @@ function HeroSection() {
               className="mt-8 flex flex-wrap items-center gap-4"
             >
               <a
-                href="/auth"
+                href="#contact"
                 className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold bg-[#F5C542] text-[#0D0F0E] rounded-lg hover:bg-[#F5C542]/90 transition-all duration-200 hover:shadow-lg hover:shadow-[#F5C542]/15 hover:-translate-y-0.5"
               >
-                Get Started
+                Book a Demo
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="#features"
+                href="#contact"
                 className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-medium text-[#F5F5F0]/70 border border-[#F5F5F0]/10 rounded-lg hover:border-[#F5F5F0]/20 hover:text-[#F5F5F0] transition-all duration-200"
               >
-                Explore ReSTRA
+                Message Us
               </a>
             </motion.div>
 
@@ -474,7 +475,7 @@ function ConnectedSection() {
             Connected workflow
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#F5F5F0] tracking-tight">
-            Everything behind the counter.
+            Every part of the operation, connected.
           </h2>
           <p className="mt-4 text-lg text-[#F5F5F0]/50 max-w-2xl mx-auto">
             One action flows into the next. No duplicate entry. No disconnected tools.
@@ -541,9 +542,9 @@ function ConnectedSection() {
         {/* Description block */}
         <AnimateSection className="mt-16 max-w-3xl mx-auto text-center">
           <p className="text-base text-[#F5F5F0]/50 leading-relaxed">
-            A customer scans a QR code. The order hits the kitchen. The inventory
-            updates. The bill prints when they&apos;re ready. No one has to switch apps,
-            re-enter data, or keep track of separate tools.
+            A guest scans a QR code. The order reaches the kitchen. Inventory updates.
+            The bill prints when they are ready. No one switches apps, re-enters data,
+            or keeps track of separate tools.
           </p>
         </AnimateSection>
       </div>
@@ -772,7 +773,7 @@ function QROrderingSection() {
                 <span className="text-[#F5C542]">Order.</span>
               </h2>
               <p className="mt-4 text-[#F5F5F0]/50 leading-relaxed">
-                Customers scan a QR code at their table, browse the menu, and place
+                Guests scan a QR code at their table, browse the menu, and place
                 their order — straight to the kitchen. No waiting for a server. No
                 order mix-ups.
               </p>
@@ -1131,21 +1132,21 @@ function PricingSection() {
       name: "Monthly",
       period: "per month",
       description: "Flexible month-to-month access. No long-term commitment.",
-      cta: "Choose Monthly",
+      cta: "Contact Us",
       featured: false,
     },
     {
       name: "6 Months",
       period: "per 6 months",
       description: "Better value for restaurants committing for half a year.",
-      cta: "Choose 6 Months",
+      cta: "Contact Us",
       featured: false,
     },
     {
       name: "Yearly",
       period: "per year",
       description: "Best value. The most popular choice for growing restaurants.",
-      cta: "Choose Yearly",
+      cta: "Contact Us",
       featured: true,
     },
   ];
@@ -1201,7 +1202,7 @@ function PricingSection() {
               </p>
 
               <a
-                href="/auth"
+                href="#contact"
                 className={`flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold rounded-lg transition-all duration-200 ${
                   plan.featured
                     ? "bg-[#F5C542] text-[#0D0F0E] hover:bg-[#F5C542]/90 hover:shadow-lg hover:shadow-[#F5C542]/15"
@@ -1238,10 +1239,10 @@ function HowItWorksSection() {
             How It Works
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-[#F5F5F0] tracking-tight">
-            How ReSTRA fits your restaurant.
+            How ReSTRA System fits your restaurant.
           </h2>
           <p className="mt-4 text-lg text-[#F5F5F0]/50 max-w-xl mx-auto">
-            Five steps. One system. Your staff focuses on serving — ReSTRA handles
+            Five steps. One system. Your staff focuses on serving — ReSTRA System handles
             the rest.
           </p>
         </AnimateSection>
@@ -1298,7 +1299,7 @@ function TrustSection() {
             <span className="text-[#F5C542]">to keep track of.</span>
           </h2>
           <p className="mt-4 text-lg text-[#F5F5F0]/50 max-w-xl mx-auto">
-            ReSTRA connects the pieces that matter — so you can focus on what
+            ReSTRA System connects the pieces that matter — so you can focus on what
             happens at the table.
           </p>
         </AnimateSection>
@@ -1325,72 +1326,42 @@ function TrustSection() {
           </div>
         </AnimateSection>
 
-        {/* Testimonial placeholders */}
-        <AnimateSection className="mt-16 max-w-3xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6">
+        {/* Built for businesses */}
+        <AnimateSection className="mt-16 max-w-2xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
-              {
-                quote: "Everything we used to run separately now lives in one place. Our team picked it up in a day.",
-                role: "Restaurant Owner — Edit this testimonial",
-                name: "Editable Name",
-              },
-              {
-                quote: "The QR ordering alone cut our average table time by a few minutes. Staff love the simplicity.",
-                role: "Operations Manager — Edit this testimonial",
-                name: "Editable Name",
-              },
-            ].map((t, i) => (
-              <div key={i} className="bg-[#151817] border border-white/[0.06] rounded-xl p-6">
-                <div className="flex gap-0.5 mb-3">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <Star key={s} className="w-3.5 h-3.5 text-[#F5C542] fill-[#F5C542]" />
-                  ))}
-                </div>
-                <p className="text-sm text-[#F5F5F0]/60 leading-relaxed italic">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="mt-4 pt-3 border-t border-white/[0.04]">
-                  <p className="text-xs font-medium text-[#F5F5F0]/70">{t.name}</p>
-                  <p className="text-[10px] text-[#F5F5F0]/30">{t.role}</p>
-                </div>
+              { label: "Restaurants", desc: "Fine dining, casual, fast-casual" },
+              { label: "Cafés & Bakeries", desc: "Coffee shops, dessert bars" },
+              { label: "Hotels & Catering", desc: "Hospitality, events, banquets" },
+            ].map((item, i) => (
+              <div key={i} className="text-center p-5">
+                <p className="text-sm font-semibold text-[#F5F5F0]">{item.label}</p>
+                <p className="text-xs text-[#F5F5F0]/40 mt-1">{item.desc}</p>
               </div>
             ))}
           </div>
         </AnimateSection>
-      </div>
-    </section>
-  );
-}
-
-// ─── Final CTA ─────────────────────────────────────────────────────
-function FinalCTASection() {
-  return (
-    <section id="contact" className="relative py-24 lg:py-32 bg-[#151817]">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <AnimateSection className="text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#F5F5F0] tracking-tight leading-tight">
             Your restaurant already has enough{" "}
             <span className="text-[#F5C542]">moving parts.</span>
           </h2>
           <p className="mt-4 text-lg text-[#F5F5F0]/50 max-w-xl mx-auto">
-            Bring them into one place with ReSTRA.
+            Bring them into one place with ReSTRA System.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="/auth"
+              href="#contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold bg-[#F5C542] text-[#0D0F0E] rounded-lg hover:bg-[#F5C542]/90 transition-all duration-200 hover:shadow-lg hover:shadow-[#F5C542]/15 hover:-translate-y-0.5"
             >
-              Get Started
-              <ArrowRight className="w-4 h-4" />
+              Book a Demo
+              <CalendarDays className="w-4 h-4" />
             </a>
             <a
-              href="mailto:hello@restra.app"
+              href="mailto:hello@restra.systems"
               className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium text-[#F5F5F0]/70 border border-[#F5F5F0]/10 rounded-lg hover:border-[#F5F5F0]/20 hover:text-[#F5F5F0] transition-all duration-200"
             >
-              Talk to Us
+              <MessageSquare className="w-4 h-4" />
+              Message Us
             </a>
-          </div>
-        </AnimateSection>
       </div>
     </section>
   );
@@ -1499,7 +1470,7 @@ function FeaturesAnchor() {
             Features
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#F5F5F0] tracking-tight">
-            Built for the way restaurants work.
+            Built for the way restaurants operate.
           </h2>
           <p className="mt-4 text-lg text-[#F5F5F0]/50 max-w-2xl mx-auto">
             Every feature exists because restaurant operators asked for it.
